@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button,
+input {
+  border: none;
+  outline: none;
+}
+body {
+  background: #fafafa;
+}
+.sidebar__logo {
+  font-size: 25px;
+}
+.sitebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+  background: #fff;
+  border-right: 1px solid rgba(128, 128, 128, 0.192);
+}
+
+.sidebar__menu {
+  margin-top: 30px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar__menu__link {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+}
+.sidebar__menu__link > i {
+  margin-right: 10px;
+}
+.sidebar__btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.sidebar__btn__list {
+  opacity: 0;
+  list-style-type: none;
+  position: absolute;
+  left: 0;
+  bottom: 110%;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+  visibility: hidden;
+  transition: all 0.4s;
+  text-align: left;
+}
+
+.sidebar__btn:hover .sidebar__btn__list {
+  visibility: visible;
+  opacity: 1;
+}
