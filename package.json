@@ -9,8 +9,11 @@
   "author": "Lida",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.8.9",
+    "@types/webpack": "^5.28.0",
     "html-webpack-plugin": "^5.5.3",
     "ts-loader": "^9.5.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
     "webpack": "^5.88.2",
     "webpack-cli": "^4.10.0"
