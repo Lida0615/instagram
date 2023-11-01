@@ -1,5 +1,9 @@
 import path from 'path'
 import HtmlWebPackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import webpack from 'webpack'
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+
 
 type BuildMode = "development" | "production"
 
@@ -25,6 +29,16 @@ export default (env: BuildEnv) => {
             new HtmlWebPackPlugin({
                 template: path.resolve(__dirname, "public", "index.html"),
             }),
+            new MiniCssExtractPlugin({
+                filename: 'css/[name].[contenthash:8].css',
+                chunkFilename: 'css/[name].[contenthash:8].css'
+            }),
+            new webpack.ProgressPlugin(),
+            new webpack.HotModuleReplacementPlugin(),
+            new ReactRefreshWebpackPlugin()
+
+
+
         ],
         module: {
             rules: [
@@ -36,9 +50,10 @@ export default (env: BuildEnv) => {
                 {
                     test: /\.s[ac]ss$/i,
                     use: [
-                        // Creates `style` nodes from JS strings
-                        "style-loader",
-                        // Translates CSS into CommonJS
+                        isDev ? 'style-loader' :
+                        MiniCssExtractPlugin.loader,
+                        // "style-loader",
+                        
                         {
                             loader: "css-loader",
                             options: {
@@ -61,6 +76,7 @@ export default (env: BuildEnv) => {
         devServer: isDev ? {
             port: port,
             open: true,
+            hot: true,
         } : undefined,
     };
     return config

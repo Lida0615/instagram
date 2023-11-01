@@ -1,5 +1,9 @@
 import ReactDOM from "react-dom/client";
-import cls from './index.module.scss'
+import  './app/styles/index.scss'
+import App from "./app/App";
 
-ReactDOM.createRoot(document.getElementById("root")).render(<h1 className={cls.name}>hello</h1>);
+ReactDOM.createRoot(document.getElementById("root")).render(
+<App/>
+
+    );
 console.log(123);
