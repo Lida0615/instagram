@@ -7,7 +7,7 @@ export const Navbar = () => {
       <div className="container">
         <div className={cls.wrap}>
 
-          <h1>logo1</h1>
+          <h1>logo12</h1>
           <NavSearch />
           <NavMenu />
         </div>
