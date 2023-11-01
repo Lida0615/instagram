@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Navbar } from '../widgets'
 import './styles/index.scss'
